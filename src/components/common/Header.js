@@ -12,8 +12,13 @@ const Header = ({loading}) => {
                 </IndexLink>
             </li>
             <li role="presentation"> 
-                <Link to="/users" activeClassName="active">
-                Users {loading && <LoadingDots interval={100} dots={20}/>}
+                <Link to="/setted" activeClassName="active">     
+                 Setted          
+                </Link>
+            </li>
+            <li role="presentation"> 
+                <Link to="/unsetted" activeClassName="active">
+                Unsetted {loading && <LoadingDots interval={100} dots={20}/>}
                 </Link>
             </li>          
         </ul>  

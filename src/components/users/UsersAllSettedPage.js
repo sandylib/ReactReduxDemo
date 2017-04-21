@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as allSettedActions from '../../actions/userAllSettedActions';
 
-class UsersPage extends React.Component {
+export class UsersAllSettedPage extends React.Component {
        constructor(props,context){
         super(props,context);     
              
@@ -21,7 +21,7 @@ class UsersPage extends React.Component {
 }
 
 
-UsersPage.propTypes = {
+UsersAllSettedPage.propTypes = {
     setted : PropTypes.array.isRequired,
     unsetted: PropTypes.array.isRequired
 };
@@ -39,4 +39,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default  connect(mapStateToProps,mapDispatchToProps)(UsersPage);
+export default  connect(mapStateToProps,mapDispatchToProps)(UsersAllSettedPage);
