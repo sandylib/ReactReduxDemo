@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux';
-import settedReducer from './settedReducer';
-import unsettedReducer from './unsettedReducer';
+import setted from './settedReducer';
+import unsetted from './unsettedReducer';
 import ajaxCallsInProgress from './ajaxStatusReducer';
 
 const rootReducer = combineReducers({
-    settedReducer,
-    unsettedReducer,
+    setted,
+    unsetted,
     ajaxCallsInProgress
 });
 export default rootReducer;

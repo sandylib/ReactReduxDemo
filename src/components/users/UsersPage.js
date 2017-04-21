@@ -1,5 +1,7 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as allSettedActions from '../../actions/userAllSettedActions';
 
 class UsersPage extends React.Component {
        constructor(props,context){
@@ -8,6 +10,7 @@ class UsersPage extends React.Component {
     } 
 
   render() {
+    console.log(this.props);
     return (
       <div>
         <h1>Hello world</h1>
@@ -19,15 +22,21 @@ class UsersPage extends React.Component {
 
 
 UsersPage.propTypes = {
-    allsetted : PropTypes.array.isRequired,
-    actions: PropTypes.object.isRequired
+    setted : PropTypes.array.isRequired,
+    unsetted: PropTypes.array.isRequired
 };
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state, ownProps) { 
   return {
-    allsetted: state.setted, //from reducer,
-    allUnsetted: state.unsetted
+    setted: state.setted, //from reducer,
+    unsetted: state.unsetted
   };
 }
 
-export default  connect(mapStateToProps)(UsersPage);
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(allSettedActions, dispatch)    
+  };
+}
+
+export default  connect(mapStateToProps,mapDispatchToProps)(UsersPage);
